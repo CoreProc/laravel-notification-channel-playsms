@@ -1,6 +1,4 @@
-Please see [this repo](https://github.com/laravel-notification-channels/channels) for instructions on how to submit a channel proposal.
-
-# A Boilerplate repo for contributions
+# Laravel Notification Channel PlaySMS
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/laravel-notification-channel-play-sms.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/laravel-notification-channel-play-sms)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -12,13 +10,6 @@ Please see [this repo](https://github.com/laravel-notification-channels/channels
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/laravel-notification-channel-play-sms.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/laravel-notification-channel-play-sms)
 
 This package makes it easy to send notifications using [playSMS](https://playsms.org) with Laravel 5.5+ and 6.0
-
-**Note:** Replace ```PlaySms``` ```playSMS``` ```CoreProc``` ```CoreProc``` ```https://coreproc.com/``` ```ask@coreproc.com``` ```laravel-notification-channel-play-sms``` ```:package_description``` ```:style_ci_id``` ```:sensio_labs_id``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md), [composer.json](composer.json) and other files, then delete this line.
-**Tip:** Use "Find in Path/Files" in your code editor to find these keywords within the package directory and replace all occurences with your specified term.
-
-This is where your description should go. Add a little code example so build can understand real quick how the package can be used. Try and limit it to a paragraph or two.
-
-
 
 ## Contents
 

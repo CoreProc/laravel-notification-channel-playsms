@@ -1,7 +1,7 @@
 {
-    "name": "laravel-notification-channels/laravel-notification-channel-play-sms",
+    "name": "coreproc/laravel-notification-channel-play-sms",
     "description": ":package_description",
-    "homepage": "https://github.com/laravel-notification-channels/laravel-notification-channel-play-sms",
+    "homepage": "https://github.com/CoreProc/laravel-notification-channel-play-sms",
     "license": "MIT",
     "authors": [
         {
