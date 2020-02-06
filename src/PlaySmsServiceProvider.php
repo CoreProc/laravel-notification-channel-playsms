@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\PlaySms;
+namespace CoreProc\PlaySms;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,24 +11,9 @@ class PlaySmsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Bootstrap code here.
-
-        /**
-         * Here's some example code we use for the pusher package.
-
-        $this->app->when(Channel::class)
-            ->needs(Pusher::class)
-            ->give(function () {
-                $pusherConfig = config('broadcasting.connections.pusher');
-
-                return new Pusher(
-                    $pusherConfig['key'],
-                    $pusherConfig['secret'],
-                    $pusherConfig['app_id']
-                );
-            });
-         */
-
+        $this->publishes([
+            __DIR__.'/config/playsms.php' => config_path('playsms.php'),
+        ]);
     }
 
     /**
@@ -36,5 +21,12 @@ class PlaySmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(PlaySmsClient::class, function () {
+            return new PlaySmsClient(
+                config('playsms.base_url'),
+                config('playsms.username'),
+                config('playsms.api_key')
+            );
+        });
     }
 }

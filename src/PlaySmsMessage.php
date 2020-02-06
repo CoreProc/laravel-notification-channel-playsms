@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\PlaySms;
+namespace CoreProc\PlaySms;
 
 use Illuminate\Support\Arr;
 

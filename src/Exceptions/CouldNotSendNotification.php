@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\PlaySms\Exceptions;
+namespace CoreProc\PlaySms\Exceptions;
 
 class CouldNotSendNotification extends \Exception
 {

@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "NotificationChannels\\PlaySms\\": "src"
+            "CoreProc\\PlaySms\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "NotificationChannels\\PlaySms\\Test\\": "tests"
+            "CoreProc\\PlaySms\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -37,5 +37,12 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CoreProc\\PlaySms\\PlaySmsServiceProvider"
+            ]
+        }
     }
 }
