@@ -6,10 +6,10 @@ use CoreProc\NotificationChannels\PlaySms\PlaySmsClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
+use function GuzzleHttp\Psr7\parse_query;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use function GuzzleHttp\Psr7\parse_query;
 
 class PlaySmsClientTest extends TestCase
 {
