@@ -1,6 +1,6 @@
 {
     "name": "coreproc/laravel-notification-channel-playsms",
-    "description": ":package_description",
+    "description": "This package makes it easy to send notifications using playSMS with Laravel 5.5+ and 6.0",
     "homepage": "https://github.com/CoreProc/laravel-notification-channel-playsms",
     "license": "MIT",
     "authors": [
