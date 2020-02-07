@@ -4,7 +4,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![StyleCI](https://styleci.io/repos/238358722/shield)](https://styleci.io/repos/238358722)
 [![Quality Score](https://img.shields.io/scrutinizer/g/coreproc/laravel-notification-channel-playsms.svg?style=flat-square)](https://scrutinizer-ci.com/g/coreproc/laravel-notification-channel-playsms)
-[![Total Downloads](https://img.shields.io/packagist/dt/coreproc/laravel-notification-channel-play-ms.svg?style=flat-square)](https://packagist.org/packages/coreproc/laravel-notification-channel-playsms)
+[![Total Downloads](https://img.shields.io/packagist/dt/coreproc/laravel-notification-channel-playsms.svg?style=flat-square)](https://packagist.org/packages/coreproc/laravel-notification-channel-playsms)
 
 This package makes it easy to send notifications using [playSMS](https://playsms.org) with Laravel 5.5+ and 6.0
 
