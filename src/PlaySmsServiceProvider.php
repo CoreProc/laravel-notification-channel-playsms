@@ -23,9 +23,9 @@ class PlaySmsServiceProvider extends ServiceProvider
     {
         $this->app->bind(PlaySmsClient::class, function () {
             return new PlaySmsClient(
-                config('playsms.base_url'),
-                config('playsms.username'),
-                config('playsms.api_key')
+                config('services.playsms.base_url'),
+                config('services.playsms.username'),
+                config('services.playsms.api_key')
             );
         });
     }
