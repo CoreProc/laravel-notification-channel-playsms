@@ -1,13 +1,10 @@
-# Laravel Notification Channel PlaySMS
+# Laravel playSMS Notification Channel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/laravel-notification-channel-play-sms.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/laravel-notification-channel-play-sms)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/coreproc/laravel-notification-channel-play-sms.svg?style=flat-square)](https://packagist.org/packages/coreproc/laravel-notification-channel-play-sms)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/laravel-notification-channels/laravel-notification-channel-play-sms/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/laravel-notification-channel-play-sms)
-[![StyleCI](https://styleci.io/repos/:style_ci_id/shield)](https://styleci.io/repos/:style_ci_id)
-[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/:sensio_labs_id.svg?style=flat-square)](https://insight.sensiolabs.com/projects/:sensio_labs_id)
-[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/laravel-notification-channel-play-sms.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/laravel-notification-channel-play-sms)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/laravel-notification-channel-play-sms/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/laravel-notification-channel-play-sms/?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/laravel-notification-channel-play-sms.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/laravel-notification-channel-play-sms)
+[![StyleCI](https://styleci.io/repos/238358722/shield)](https://styleci.io/repos/238358722)
+[![Quality Score](https://img.shields.io/scrutinizer/g/coreproc/laravel-notification-channel-play-sms.svg?style=flat-square)](https://scrutinizer-ci.com/g/coreproc/laravel-notification-channel-play-sms)
+[![Total Downloads](https://img.shields.io/packagist/dt/coreproc/laravel-notification-channel-play-sms.svg?style=flat-square)](https://packagist.org/packages/coreproc/laravel-notification-channel-play-sms)
 
 This package makes it easy to send notifications using [playSMS](https://playsms.org) with Laravel 5.5+ and 6.0
 
@@ -27,19 +24,61 @@ This package makes it easy to send notifications using [playSMS](https://playsms
 
 ## Installation
 
-Please also include the steps for any third-party service setup that's required for this package.
+Install this package with Composer:
+
+    composer require coreproc/laravel-notification-channel-playsms
 
 ### Setting up the playSMS service
 
-Optionally include a few steps how users can set up the service.
+A web server with playSMS installed is required to use this service. Visit 
+[https://help.playsms.org/en/](https://help.playsms.org/en/) to check out set up / installation instruction for playSMS.
+
+Once you have a playSMS server up and running, you can obtain an API key by going to `My Account` -> 
+`User Configuration`. You'll be able to see your webservices token in that page. Use this as your API key.  
+
+Add the base URL of your playSMS server, your username, and your API key to your `config/services.php`.
+
+    // config/services.php
+    ....
+    'playsms' => [
+        'base_url' => env('PLAYSMS_BASE_URL'),
+        'username' => env('PLAYSMS_USERNAME'),
+        'api_key' => env('PLAYSMS_API_KEY'),
+    ],
+    ...
 
 ## Usage
 
-Some code examples, make it clear how to use the package
+Sending a playSMS notification can be done by making a `Notification` class with the following:
+
+```php
+use CoreProc\NotificationChannels\PlaySms\PlaySmsChannel;
+use CoreProc\NotificationChannels\PlaySms\PlaySmsMessage;
+use Illuminate\Notifications\Notification;
+
+class AccountActivated extends Notification
+{
+    public function via($notifiable)
+    {
+        return [PlaySmsChannel::class];
+    }
+
+    public function toPlaySms($notifiable)
+    {
+        return (new PlaySmsMessage())->setMessage('Your account has been activated!');
+    }
+}
+```
 
 ### Available Message methods
 
-A list of all available options
+The `PlaySmsMessage` has only one method available as of now:
+
+```php
+setMessage($message)
+```
+
+Use this method to set the content of the SMS being sent.
 
 ## Changelog
 
@@ -63,6 +102,12 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 - [CoreProc](https://github.com/CoreProc)
 - [All Contributors](../../contributors)
+
+## About CoreProc, Inc.
+
+CoreProc, Inc. is a software development company that provides software development services to startups, digital/ad agencies, and enterprises.
+
+Learn more about us on our [website](https://coreproc.com).
 
 ## License
 

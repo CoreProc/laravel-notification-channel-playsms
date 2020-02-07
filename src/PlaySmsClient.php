@@ -1,8 +1,10 @@
 <?php
 
-namespace CoreProc\PlaySms;
+namespace CoreProc\NotificationChannels\PlaySms;
 
+use CoreProc\NotificationChannels\PlaySms\Exceptions\CouldNotSendNotification;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 class PlaySmsClient
 {
@@ -20,17 +22,26 @@ class PlaySmsClient
         ));
     }
 
+    /**
+     * @param $mobileNumber
+     * @param $message
+     * @throws CouldNotSendNotification
+     */
     public function send($mobileNumber, $message)
     {
-        $this->client->get('/index.php', [
-            'query' => [
-                'app' => 'ws',
-                'u' => $this->username,
-                'h' => $this->apiKey,
-                'op' => 'pv',
-                'to' => $mobileNumber,
-                'msg' => $message,
-            ],
-        ]);
+        try {
+            $this->client->get('/index.php', [
+                'query' => [
+                    'app' => 'ws',
+                    'u' => $this->username,
+                    'h' => $this->apiKey,
+                    'op' => 'pv',
+                    'to' => $mobileNumber,
+                    'msg' => $message,
+                ],
+            ]);
+        } catch (RequestException $e) {
+            throw new CouldNotSendNotification("Failed to call PlaySMS API. Endpoint responded with {$e->getCode()}.");
+        }
     }
 }
