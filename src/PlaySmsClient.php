@@ -20,17 +20,26 @@ class PlaySmsClient
         ));
     }
 
+    /**
+     * @param $mobileNumber
+     * @param $message
+     * @throws CouldNotSendNotification
+     */
     public function send($mobileNumber, $message)
     {
-        $this->client->get('/index.php', [
-            'query' => [
-                'app' => 'ws',
-                'u' => $this->username,
-                'h' => $this->apiKey,
-                'op' => 'pv',
-                'to' => $mobileNumber,
-                'msg' => $message,
-            ],
-        ]);
+        try {
+            $this->client->get('/index.php', [
+                'query' => [
+                    'app' => 'ws',
+                    'u' => $this->username,
+                    'h' => $this->apiKey,
+                    'op' => 'pv',
+                    'to' => $mobileNumber,
+                    'msg' => $message,
+                ],
+            ]);
+        } catch (RequestException $e) {
+            throw new CouldNotSendNotification("Failed to call PlaySMS API. Endpoint responded with {$e->getCode()}.");
+        }
     }
 }
