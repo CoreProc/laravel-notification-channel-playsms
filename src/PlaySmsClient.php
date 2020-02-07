@@ -1,8 +1,10 @@
 <?php
 
-namespace CoreProc\PlaySms;
+namespace CoreProc\NotificationChannels\PlaySms;
 
+use CoreProc\NotificationChannels\PlaySms\Exceptions\CouldNotSendNotification;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 class PlaySmsClient
 {

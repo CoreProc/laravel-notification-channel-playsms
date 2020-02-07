@@ -1,8 +1,8 @@
 <?php
 
-namespace CoreProc\PlaySms;
+namespace CoreProc\NotificationChannels\PlaySms;
 
-use CoreProc\PlaySms\Exceptions\CouldNotSendNotification;
+use CoreProc\NotificationChannels\PlaySms\Exceptions\CouldNotSendNotification;
 use Illuminate\Notifications\Notification;
 
 class PlaySmsChannel
@@ -18,9 +18,9 @@ class PlaySmsChannel
      * Send the given notification.
      *
      * @param mixed $notifiable
-     * @param \Illuminate\Notifications\Notification $notification
+     * @param Notification $notification
      *
-     * @throws \CoreProc\PlaySms\Exceptions\CouldNotSendNotification
+     * @throws CouldNotSendNotification
      */
     public function send($notifiable, Notification $notification)
     {

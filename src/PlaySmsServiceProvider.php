@@ -1,6 +1,6 @@
 <?php
 
-namespace CoreProc\PlaySms;
+namespace CoreProc\NotificationChannels\PlaySms;
 
 use Illuminate\Support\ServiceProvider;
 

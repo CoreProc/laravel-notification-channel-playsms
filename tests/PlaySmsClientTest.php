@@ -1,13 +1,13 @@
 <?php
 
-namespace CoreProc\PlaySms\Test;
+namespace CoreProc\NotificationChannels\PlaySms\Test;
 
+use CoreProc\NotificationChannels\PlaySms\PlaySmsClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use CoreProc\PlaySms\PlaySmsClient;
 use PHPUnit\Framework\TestCase;
 use function GuzzleHttp\Psr7\parse_query;
 

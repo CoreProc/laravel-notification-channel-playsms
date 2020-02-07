@@ -1,12 +1,12 @@
 {
-    "name": "coreproc/laravel-notification-channel-play-sms",
+    "name": "coreproc/laravel-notification-channel-playsms",
     "description": ":package_description",
-    "homepage": "https://github.com/CoreProc/laravel-notification-channel-play-sms",
+    "homepage": "https://github.com/CoreProc/laravel-notification-channel-playsms",
     "license": "MIT",
     "authors": [
         {
-            "name": "CoreProc",
-            "email": "ask@coreproc.com",
+            "name": "R Daitan",
+            "email": "r.daitan@coreproc.ph",
             "homepage": "https://coreproc.com/",
             "role": "Developer"
         }
@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "CoreProc\\PlaySms\\": "src"
+            "CoreProc\\NotificationChannels\\PlaySms\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CoreProc\\PlaySms\\Test\\": "tests"
+            "CoreProc\\NotificationChannels\\PlaySms\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -41,7 +41,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CoreProc\\PlaySms\\PlaySmsServiceProvider"
+                "CoreProc\\NotificationChannels\\PlaySms\\PlaySmsServiceProvider"
             ]
         }
     }
